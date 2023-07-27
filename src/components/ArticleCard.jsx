@@ -1,0 +1,6 @@
+const ArticleCard = () => {
+    return (
+        <>
+        </>
+    )
+}
