@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const ArticleSummary = ({ articles }) => {
+    const dateFormat = {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+    };
+
     const { id } = useParams();
     const navigate = useNavigate();
 
@@ -16,10 +22,15 @@ const ArticleSummary = ({ articles }) => {
 
     return (
         <div className='container my-5 d-flex flex-column'>
-            <h1>{article.fields.headline}</h1>
-            <p>{article.fields.byline}</p>
-            <img className='mb-4' src={article.fields.thumbnail} alt={article.fields.headline} />
-            <p>{article.fields.bodyText}</p>
+            <div className='row'>
+                <img className='article-image mb-4 col-md-6' src={article.fields.thumbnail} alt={article.fields.headline} />
+                <div className='col-md-6'>
+                    <h3>{article.fields.headline}</h3>
+                    <p>By {article.fields.byline}{" - "}{new Date(article.webPublicationDate).toLocaleDateString('en-GB', dateFormat)}</p>
+                    {/* <p>{article.webPublicationDate}</p> */}
+                    <p>{article.fields.bodyText.substring(0, 900)}{"..."} <a href={article.webUrl}>Read More</a></p>
+                </div>
+            </div>
         </div>
     )
 }

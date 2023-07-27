@@ -25,7 +25,7 @@ const ArticleCard = ({ articles }) => {
             {articles.map((article) => (
                 <div key={article.id} className="col-md-6 mb-4">
                     <div className="article-card d-flex flex-column" onClick={() => handleClick(article.id)}>
-                        <img src={article.fields.thumbnail} alt={article.fields.headline} />
+                        <img className='article-image' src={article.fields.thumbnail} alt={article.fields.headline} />
                         <p className="section-name mt-2 mb-1">{article.sectionName.toUpperCase()}</p>
                         <p className="date-and-writer">
                             {new Date(article.webPublicationDate).toLocaleDateString('en-GB', dateFormat)}{' '} | {article.fields.byline}
