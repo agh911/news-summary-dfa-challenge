@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import './ArticleCard.css';
 
 const ArticleCard = ({ articles }) => {
     const dateFormat = {
@@ -27,7 +28,7 @@ const ArticleCard = ({ articles }) => {
                         <img src={article.fields.thumbnail} alt={article.fields.headline} />
                         <p className="section-name mt-2 mb-1">{article.sectionName.toUpperCase()}</p>
                         <p className="date-and-writer">
-                            {new Date(article.webPublicationDate).toLocaleDateString('en-GB')}{' '} | {article.fields.byline}
+                            {new Date(article.webPublicationDate).toLocaleDateString('en-GB', dateFormat)}{' '} | {article.fields.byline}
                         </p>
                         <h3>{article.fields.headline}</h3>
                     </div>
