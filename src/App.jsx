@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Headlines from './pages/HeadlinesPage.jsx';
+import ArticleSummary from "./pages/ArticleSummaryPage.jsx";
 import { getArticles } from "./utils/articleData.js";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
     <>
       <Header />
       <Headlines articles={articles} />
+      <ArticleSummary articles={articles} />
       <Footer />
     </>
   )
