@@ -1,6 +1,24 @@
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 const ArticleCard = ({ articles }) => {
+    const dateFormat = {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+    };
+
+    const navigate = useNavigate();
+
+    const handleClick = (id) => {
+        navigate(`/article/${id}`);
+    };
+
+    // If no articles have been found, let the user know by displaying a message
+    if (!articles || articles.length === 0) {
+        return <p>No articles available.</p>;
+    }
+
     return (
         <>
             {articles.map((article) => (

@@ -1,5 +1,6 @@
 // import './App.css
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Headlines from './pages/HeadlinesPage.jsx';
@@ -25,8 +26,10 @@ function App() {
   return (
     <>
       <Header />
-      <Headlines articles={articles} />
-      <ArticleSummary articles={articles} />
+      <Routes>
+        <Route path="/" element={<Headlines articles={articles} />} />
+        <Route path="/article/:id" element={<ArticleSummary articles={articles} />} />
+      </Routes>
       <Footer />
     </>
   )
