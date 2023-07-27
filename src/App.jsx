@@ -15,7 +15,13 @@ function App() {
     if (data instanceof Error) {
       setArticles([]);
     } else {
-      setArticles(data);
+      // The / in the ids interferes with routing to a specific article as the produced URL is not valid 
+      // THE FIX: Modify the article ids here by replacing "/" with "-"
+      const modifiedArticles = data.map(item => ({
+        ...item,
+        id: item.id.replaceAll("/", "-")
+      }));
+      setArticles(modifiedArticles);
     }
   }
 

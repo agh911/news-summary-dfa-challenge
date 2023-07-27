@@ -16,9 +16,9 @@ const ArticleSummary = ({ articles }) => {
 
     return (
         <div className='container my-5 d-flex flex-column'>
-            <img src={article.fields.thumbnail} alt={article.fields.headline} />
             <h1>{article.fields.headline}</h1>
             <p>{article.fields.byline}</p>
+            <img className='mb-4' src={article.fields.thumbnail} alt={article.fields.headline} />
             <p>{article.fields.bodyText}</p>
         </div>
     )
