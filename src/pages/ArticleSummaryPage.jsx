@@ -16,8 +16,10 @@ const ArticleSummary = ({ articles }) => {
     const article = articles.find((article) => article.id === id);
 
     if (!article) {
-        // If article not found,use navigate to redirect to the error page
-        navigate('/error');
+        // If article not found,let the user know
+        return (
+            <div>The article you are looking for was not found.</div>
+        )
     }
 
     return (
