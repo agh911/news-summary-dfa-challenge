@@ -1,14 +1,9 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import ArticleDateAndWriter from './ArticleDateAndWriter';
 import './ArticleCard.css';
 
 const ArticleCard = ({ articles }) => {
-    const dateFormat = {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric',
-    };
-
     const navigate = useNavigate();
 
     const handleClick = (id) => {
@@ -27,9 +22,7 @@ const ArticleCard = ({ articles }) => {
                     <div className="article-card d-flex flex-column" onClick={() => handleClick(article.id)}>
                         <img className='article-image' src={article.fields.thumbnail} alt={article.fields.headline} />
                         <p className="section-name mt-2 mb-1">{article.sectionName.toUpperCase()}</p>
-                        <p className="date-and-writer">
-                            {new Date(article.webPublicationDate).toLocaleDateString('en-GB', dateFormat)}{' '} | {article.fields.byline}
-                        </p>
+                        <ArticleDateAndWriter date={article.webPublicationDate} writer={article.fields.byline} />
                         <h3>{article.fields.headline}</h3>
                     </div>
                 </div>

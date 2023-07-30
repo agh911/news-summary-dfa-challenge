@@ -1,14 +1,9 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useParams, useNavigate } from 'react-router-dom';
+import ArticleDateAndWriter from '../components/ArticleDateAndWriter';
 
 const ArticleSummary = ({ articles }) => {
-    const dateFormat = {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric',
-    };
-
     const { id } = useParams();
     const navigate = useNavigate();
 
@@ -31,10 +26,10 @@ const ArticleSummary = ({ articles }) => {
             <div className='row'>
                 <img className='article-image mb-4 col-md-6' src={article.fields.thumbnail} alt={article.fields.headline} />
                 <div className='col-md-6'>
+                    <p className='section-name'>{article.sectionName.toUpperCase()}</p>
                     <h3>{article.fields.headline}</h3>
-                    <p>By {article.fields.byline}{" - "}{new Date(article.webPublicationDate).toLocaleDateString('en-GB', dateFormat)}</p>
-                    {/* <p>{article.webPublicationDate}</p> */}
-                    <p>{article.fields.bodyText.substring(0, 900)}{"..."} <a href={article.webUrl}>Read More</a></p>
+                    <ArticleDateAndWriter date={article.webPublicationDate} writer={article.fields.byline} />
+                    <p>{article.fields.bodyText.substring(0, 750)}{"..."} <a href={article.webUrl} target='_blank' rel='noreferrer noopener'>Read More</a></p>
                 </div>
             </div>
         </div>
