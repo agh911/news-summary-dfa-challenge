@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useParams, useNavigate } from 'react-router-dom';
 import ArticleDateAndWriter from '../components/ArticleDateAndWriter';
+import './ArticleSummaryPage.css';
 
 const ArticleSummary = ({ articles }) => {
     const { id } = useParams();
@@ -24,7 +25,9 @@ const ArticleSummary = ({ articles }) => {
     return (
         <div className='container my-5 d-flex flex-column'>
             <div className='row'>
-                <img className='article-image mb-4 col-md-6' src={article.fields.thumbnail} alt={article.fields.headline} />
+                <div className='col-md-6 d-flex flex-column'>
+                    <img className='article-image mb-4' src={article.fields.thumbnail} alt={article.fields.headline} />
+                </div>
                 <div className='col-md-6'>
                     <p className='section-name'>{article.sectionName.toUpperCase()}</p>
                     <h3>{article.fields.headline}</h3>
