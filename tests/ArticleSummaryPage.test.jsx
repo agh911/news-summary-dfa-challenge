@@ -47,7 +47,7 @@ describe('Article Summary Page Tests', () => {
                 path: '/article/:id',
                 element: <ArticleSummaryPage articles={articleTestData} />,
             },
-        ];
+        ]
 
         // Act
         const router = createMemoryRouter(
@@ -56,11 +56,11 @@ describe('Article Summary Page Tests', () => {
                 initialEntries: [`/article/${invalidArticleId}`],
                 initialIndex: 0,
             }
-        );
+        )
 
         render(
             <RouterProvider router={router} />
-        );
+        )
 
         // Assert
         const errorPageElement = screen.getByText('Oops! A Mischievous Dog Chewed Up This Page');
