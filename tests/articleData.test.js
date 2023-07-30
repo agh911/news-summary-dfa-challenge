@@ -26,4 +26,16 @@ describe('getArticles tests', () => {
         // Assert
         expect(result).toEqual(articleTestData);
     });
+
+    it('should have unsuccessful request returning the error object', async () => {
+        // Arrange
+        const error = { message: 'Error fetching articles' };
+        axios.get.mockRejectedValueOnce(error);
+
+        // Act
+        const result = await getArticles();
+
+        // Assert
+        expect(result).toBe(error);
+    });
 })
