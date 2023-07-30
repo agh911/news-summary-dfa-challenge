@@ -1,0 +1,9 @@
+.error-message {
+    max-width: 450px;
+    text-align: center;
+}
+
+.error-image {
+    max-width: 450px;
+    height: auto;
+}

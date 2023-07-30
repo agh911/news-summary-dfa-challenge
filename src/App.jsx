@@ -5,6 +5,7 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Headlines from './pages/HeadlinesPage.jsx';
 import ArticleSummary from "./pages/ArticleSummaryPage.jsx";
+import ErrorPage from './pages/ErrorPage.jsx';
 import { getArticles } from "./utils/articleData.js";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Headlines articles={articles} />} />
         <Route path="/article/:id" element={<ArticleSummary articles={articles} />} />
+        <Route path="/error" element={<ErrorPage />} />
       </Routes>
       <Footer />
     </>
