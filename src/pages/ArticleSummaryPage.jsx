@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useParams, useNavigate } from 'react-router-dom';
 
@@ -15,9 +15,15 @@ const ArticleSummary = ({ articles }) => {
     // Need to find the article with the matching id from the articles array
     const article = articles.find((article) => article.id === id);
 
+    useEffect(() => {
+        // If article not found, let the user know by navigating to the error page
+        if (!article) {
+            navigate('/error');
+        }
+    }, [article, navigate]);
+
     if (!article) {
-        // If article not found,let the user know by navigating to an error page
-        navigate('/error');
+        return null;
     }
 
     return (
@@ -32,8 +38,8 @@ const ArticleSummary = ({ articles }) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 ArticleSummary.propTypes = {
     articles: PropTypes.arrayOf(
