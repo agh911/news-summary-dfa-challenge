@@ -1,0 +1,26 @@
+[
+    {
+        "id": "article1",
+        "sectionName": "Sports",
+        "webPublicationDate": "2023-07-30T12:34:56Z",
+        "webUrl": "https://example.com/article1",
+        "fields": {
+            "headline": "Test Article 1",
+            "byline": "John Doe",
+            "thumbnail": "https://example.com/article1.jpg",
+            "bodyText": "This is the article content for Test Article 1."
+        }
+    },
+    {
+        "id": "article2",
+        "sectionName": "Technology",
+        "webPublicationDate": "2023-07-29T10:20:30Z",
+        "webUrl": "https://example.com/article2",
+        "fields": {
+            "headline": "Test Article 2",
+            "byline": "Jane Smith",
+            "thumbnail": "https://example.com/article2.jpg",
+            "bodyText": "This is the article content for Test Article 2."
+        }
+    }
+]

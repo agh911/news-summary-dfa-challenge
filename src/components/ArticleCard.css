@@ -1,0 +1,13 @@
+.section-name {
+    color: #FA4444;
+    font-weight: bold;
+}
+
+.date-and-writer {
+    font-size: small;
+    color: #595b66;
+}
+
+.article-image {
+    border-radius: 5px;
+}

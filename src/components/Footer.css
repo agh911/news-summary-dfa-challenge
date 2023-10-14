@@ -1,0 +1,32 @@
+.fa-brands {
+    opacity: 0.4;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fa-brands:hover {
+    opacity: 1;
+}
+
+.fa-linkedin:hover {
+    color: #0A66C2;
+}
+
+.fa-square-facebook:hover {
+    color: #0165E1;
+}
+
+.fa-square-instagram:hover {
+    color: #C13584;
+}
+
+.fa-square-twitter:hover {
+    color: #1D9BF0;
+}
+
+.fa-square-youtube:hover {
+    color: #FF0000;
+}
+
+.fa-square-pinterest:hover {
+    color: #E60023;
+}
